@@ -1,0 +1,103 @@
+<p>crud works!</p>
+
+
+<h1>CRUD with Local API</h1>
+
+<form name="myForm" #frm="ngForm" (ngSubmit)="onSubmitData(frm)">
+    
+    <div class="form-group">
+        <input type="hidden" name="id" class="form-control" #id="ngModel" ngModel
+         [(ngModel)]="idd" >
+    </div>
+    <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" name="fname" class="form-control" #fname="ngModel" ngModel 
+        [(ngModel)]="fn">
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lname" class="form-control" #lname="ngModel" ngModel
+        [(ngModel)]="ln">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="eml" class="form-control" #eml="ngModel" ngModel
+        [(ngModel)]="el">
+    </div>
+
+    <div class="form-group">
+        <label for="course">Course:</label>
+        <select name="course" id="" class="form-control" #course="ngModel" ngModel
+        [(ngModel)]="cor">
+            <option *ngFor="let course of courses">{{course}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" class=" radio" value="male" #gender="ngModel" ngModel
+        [(ngModel)]="gen">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" class=" radio" value="female" #gender="ngModel" ngModel
+        [(ngModel)]="gen">
+        <label for="female">Female</label>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" name="pass" class="form-control" #pass="ngModel" ngModel
+        [(ngModel)]="ps">
+    </div>
+
+    <div class="form-group">
+        <label for="cpassword">Confirm Password:</label>
+        <input type="password" name="cpass" class="form-control" #cpass="ngModel" ngModel
+        [(ngModel)]="cps">
+    </div> <br>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-info">Submit</button>
+
+        <button type="button" class="btn btn-info" (click)="onClickUpdateBtn(frm)">Update</button>
+        
+    </div>
+
+</form>
+
+
+
+<!-- show all form data to user -->
+
+<div *ngIf="allData?.length > 0">
+    <table class="table table-primary">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Gender</th>
+            <th>Password</th>
+            <th>Confirm Password</th>
+            <th> Action</th>
+            <th> Action</th>
+        </tr>
+        <tr *ngFor="let dt of allData">
+            <td>{{dt.fname }}</td>
+            <td>{{dt.lname}}</td>
+            <td>{{dt.eml}}</td>
+            <td>{{dt.course}}</td>
+            <td>{{dt.gender}}</td>
+            <td>{{dt.pass}}</td>
+            <td>{{dt.cpass}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="onDel(dt)">Delete</button>
+            </td>
+            <td>
+                <button class="btn btn-warning" (click)="onUpdate(dt)">Update</button>
+            </td>
+        </tr>
+    </table>
+    
+    </div>

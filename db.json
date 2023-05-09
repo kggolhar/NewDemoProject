@@ -1,0 +1,24 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "fname": "Kuldip",
+      "lname": "Go",
+      "eml": "kg@gmai.com",
+      "course": "Engg",
+      "gender": "male",
+      "pass": "123",
+      "cpass": "123"
+    },
+    {
+      "fname": "Rani",
+      "lname": "A",
+      "eml": "Rani@gmai.com",
+      "course": "BTech Agri",
+      "gender": "female",
+      "pass": "1231",
+      "cpass": "1231",
+      "id": 3
+    }
+  ]
+}

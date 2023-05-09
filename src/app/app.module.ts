@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CrudComponent } from './crud/crud.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AbcdComponent } from './abcd/abcd.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CrudComponent
+    CrudComponent,
+    AbcdComponent
   ],
   imports: [
     BrowserModule,
